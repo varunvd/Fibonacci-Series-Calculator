@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Series</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<section class="pt-5 pb-5 bg-dark inner-header">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1 class="mt-0 mb-3 text-white">Fibonacci Series</h1>
+			<div class="breadcrumbs">
+				<p class="mb-0 text-white"><span class="text-success">Done by Varun V Deshpande</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+</br>
+</br>
+<div class="container">
+  <form action="fib" method="post">
+      {% csrf_token %}
+      <h3> Enter a number </h3>
+      <input type="text" id="fibo" name="number" placeholder="">
+      <button class="btn btn-success">Calculate</button>
+  </form>
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+  {% if result %}
+    <h4> Output : {{result}}</h4>
+    <h4> Time taken for execution : {{time}} nano seconds </h4>
+  {% endif %}
+</div>
+</body>
+</html>
